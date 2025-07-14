@@ -182,6 +182,9 @@
 # @param use_vmac
 #   Use virtual MAC address for VRRP packages.
 #
+# @param use_vmac_vip
+#   Set use_vmac on virtual_ipaddress interface
+#
 # @param vmac_xmit_base
 #   When using virtual MAC addresses transmit and receive
 #   VRRP messaged on the underlying interface whilst ARP
@@ -237,6 +240,7 @@ define keepalived::vrrp::instance (
   Boolean $collect_unicast_peers                                          = false,
   $dont_track_primary                                                     = false,
   $use_vmac                                                               = false,
+  Boolean $use_vmac_vip                                                   = false,
   $vmac_xmit_base                                                         = true,
   Boolean $use_vmac_addr                                                  = false,
   Boolean $native_ipv6                                                    = false,

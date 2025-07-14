@@ -157,6 +157,8 @@ vrrp_instance <%= @_name %> {
     <%- else -%>
       <%- if @use_vmac -%>
     <%= ip %>
+      <%- elsif @use_vmac_vip -%>
+    <%= ip %> dev <%= @virtual_ipaddress_int || @interface %> use_vmac
       <%- else -%>
     <%= ip %> dev <%= @virtual_ipaddress_int || @interface %>
       <%- end -%>
